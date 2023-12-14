@@ -1,0 +1,36 @@
+﻿@model Student
+
+<h1 class="alert alert-warning">Are you Sure You want to delete this?</h1>
+<div class="row" style="align-items: flex-start">
+	<dl class="col-6 row">
+		<dt class="col-2">@Html.DisplayNameFor(d=>d.Id)</dt>
+		<dd class="col-10">@Html.DisplayFor(d=>d.Id)</dd>
+
+		<dt class="col-2">@Html.DisplayNameFor(d=>d.Name)</dt>
+		<dd class="col-10">@Html.DisplayFor(d=>d.Name)</dd>
+
+		<dt class="col-2">@Html.DisplayNameFor(d=>d.Level)</dt>
+		<dd class="col-10">@Html.DisplayFor(d=>d.Level)</dd>
+
+	</dl>
+	<img src="@Model.ImagePath" class="card col-6" style="width:200px" />
+</div>
+<form method="post" asp-controller="Students" asp-action="Delete">
+	<input type="hidden" asp-for="Id" />
+	<button type="submit" class="btn btn-danger">Delete</button>
+
+
+</form>
+
+
+
+<a asp-controller="Students" asp-action="GetIndexView">Back to List</a>
+
+@section Scripts{
+	<script>
+		function SetImgSrc() {
+			document.getElementById("studImage").src = window.URL.createObjectURL
+				(document.getElementById("imageFormFile").files[0]);
+		}
+	</script>
+}

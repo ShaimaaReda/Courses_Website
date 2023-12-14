@@ -1,0 +1,33 @@
+﻿@model Student
+
+<h1 class="alert alert-warning">@Model.Name Details</h1>
+<div class="row" style="align-items: flex-start ">
+<dl class=" col-6 row">
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Id)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Id)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Name)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Name)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Level)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Level)</dd>
+
+</dl>
+    <img src="@Model.ImagePath" class="card col-6" style="width:200px" />
+</div>
+@*<ul class="col-4 list-group">
+    <li class="list-group-item">Employess</li>
+    @foreach(var emp in Model.Employees)
+    {
+        <li class="list-group-item list-group-item-action">
+            <a asp-controller="Employees" asp-action="GetDetailsView" asp-route-id="@emp.Id">
+                @emp.FullName (@emp.Position)
+            </a>
+        </li>
+    }
+</ul>*@
+
+
+<a asp-controller="Students" asp-action="GetIndexView">Back to List</a>
+
+@*<partial name="_TSContact" />*@

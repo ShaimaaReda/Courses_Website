@@ -1,0 +1,38 @@
+﻿@model Course
+
+<h1 class="alert alert-warning">@Model.CourseName Details</h1>
+
+<dl class="row">
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Id)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Id)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.CourseName)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.CourseName)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.TotalHours)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.TotalHours)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.StartCourse)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.StartCourse)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Cost)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Cost)</dd>
+
+</dl>
+
+@*<ul class="col-4 list-group">
+    <li class="list-group-item">Employess</li>
+    @foreach(var emp in Model.Employees)
+    {
+        <li class="list-group-item list-group-item-action">
+            <a asp-controller="Employees" asp-action="GetDetailsView" asp-route-id="@emp.Id">
+                @emp.FullName (@emp.Position)
+            </a>
+        </li>
+    }
+</ul>*@
+
+
+<a asp-controller="Courses" asp-action="GetIndexView">Back to List</a>
+
+@*<partial name="_TSContact" />*@

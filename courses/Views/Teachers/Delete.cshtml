@@ -1,0 +1,36 @@
+﻿@model Teacher
+
+<h1 class="alert alert-warning">Are you Sure You want to delete this?</h1>
+
+<dl class="row">
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Id)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Id)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Name)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Name)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Subject)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Subject)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Description)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Description)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Email)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Email)</dd>
+
+    <dt class="col-2">@Html.DisplayNameFor(d=>d.Phone)</dt>
+    <dd class="col-10">@Html.DisplayFor(d=>d.Phone)</dd>
+
+</dl>
+
+
+<form method="post" asp-controller="Teachers" asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+
+
+</form>
+
+
+<a asp-controller="Teachers" asp-action="GetIndexView">Back to List</a>
+
